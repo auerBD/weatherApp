@@ -1,0 +1,47 @@
+#root {
+  min-height: 100vh;
+}
+
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Optional header styling if you add one later */
+
+.app-header {
+
+  width: 100%;
+
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  justify-content: center;
+
+  color: white;
+
+}
+
+
+.app-title {
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+}
+
+
+/* Smooth page transitions */
+
+* {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}

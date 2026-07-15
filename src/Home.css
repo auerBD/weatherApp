@@ -1,0 +1,94 @@
+/* General page styling */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  background: linear-gradient(
+    135deg,
+    #74ebd5,
+    #9face6
+  );
+
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+/* Search section */
+.search-form {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+
+.search-input {
+  width: 280px;
+  padding: 0.8rem 1rem;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+
+  outline: none;
+
+  background: rgba(255,255,255,0.9);
+
+  transition: 0.2s ease;
+}
+
+
+.search-input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+
+.search-button {
+  padding: 0.8rem 1.4rem;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #222;
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.search-button:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
+
+/* Error message */
+
+.error-message {
+  background: rgba(255,0,0,0.15);
+
+  color: #9b0000;
+
+  padding: 1rem 2rem;
+
+  border-radius: 12px;
+
+  margin-bottom: 1rem;
+}
+
+
+/* Loading */
+
+.loading {
+  color: white;
+  font-size: 1.5rem;
+}

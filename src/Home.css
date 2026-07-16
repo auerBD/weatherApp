@@ -21,12 +21,17 @@
 .search-form {
   display: flex;
   gap: 0.8rem;
+
+  width: 100%;
+  max-width: 350px;
+
   margin-bottom: 2rem;
 }
 
 
 .search-input {
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   padding: 0.8rem 1rem;
 
   border: none;
@@ -91,4 +96,25 @@
 .loading {
   color: white;
   font-size: 1.5rem;
+}
+
+
+@media(max-width:500px){
+
+  .search-form {
+    flex-direction: row;
+    width: 90%;
+  }
+
+
+  .search-input {
+    max-width: none;
+    width: 100%;
+  }
+
+
+  .search-button {
+    width: 60%;
+  }
+
 }

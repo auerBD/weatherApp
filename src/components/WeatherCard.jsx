@@ -4,7 +4,7 @@ import "../WeatherCard.css"
 function WeatherCard({ data }) {
   return (
     <div className="weather-card">
-      <h1>Current Weather in {data.name}</h1>
+      <h1>{data.name}</h1>
 
       <div className="weather-icon">
         <img

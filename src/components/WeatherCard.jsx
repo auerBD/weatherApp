@@ -4,8 +4,9 @@ import "../WeatherCard.css"
 function WeatherCard({ data, onDelete }) {
   return (
     <div className="weather-card">
-      <button className="delete-button" onClick={() => onDelete(data.id)}>x</button>
+      <button className="delete-button" onClick={() => onDelete(data.id)}>𝘅</button>
       <h1>{data.name}</h1>
+      <h4>{data.sys.country}</h4>
 
       <div className="weather-icon">
         <img

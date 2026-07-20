@@ -59,7 +59,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
-
+@media (hover :hover) {
 .search-button {
   padding: 0.8rem 1.4rem;
 
@@ -79,7 +79,9 @@
 .search-button:hover {
   background: #444;
   transform: translateY(-2px);
+  }
 }
+
 
 
 /* Error message */
@@ -113,7 +115,8 @@
 
   .search-form {
     flex-direction: row;
-    width: 90%;
+    width: 85%;
+    margin-bottom: 1rem;
   }
 
 

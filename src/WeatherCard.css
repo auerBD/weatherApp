@@ -1,6 +1,9 @@
 .weather-card {
 
-  width: 350px;
+  position: relative;
+
+  width: 100%;
+  max-width: 350px;
 
   padding: 2rem;
 
@@ -19,6 +22,31 @@
 
   animation: slideUp 0.5s ease;
 }
+
+.delete-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 100%;
+
+  background: #a6a2a258;
+  color: rgb(26, 25, 25);
+
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #dd1010;
+  transform: scale(110%);}
 
 
 /* Title */
@@ -121,14 +149,6 @@
 /* Mobile */
 
 @media (max-width: 500px) {
-
-  .weather-card {
-
-    width: 90%;
-
-    padding: 1.5rem;
-
-  }
 
 
   .weather-card h1 {

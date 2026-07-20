@@ -5,26 +5,38 @@ import "../Home.css"
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [weather, setWeather] = useState(null);
+  const [weatherCards, setWeatherCards] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-useEffect(() => {
-  const loadDefaultWeather = async () => {
-    try {
-      const location = await getCoordinates("Graz");
-      const weatherData = await getWeatherInfo(location.lat, location.lon);
-      setWeather(weatherData);
-    } catch (err) {
-      console.error(err);
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+  const deleteCity = (id) => {
+    setWeatherCards((previous) =>
+      previous.filter((city) => city.id !== id)
+    );
   };
 
-  loadDefaultWeather();
-}, []);
+  useEffect(() => {
+    const cities = ["Graz", "Vienna", "Salzburg"];
+
+    const loadDefaultWeather = async () => {
+      try {
+        const weatherData = await Promise.all(
+          cities.map(async (city) => {
+            const location = await getCoordinates(city);
+            return await getWeatherInfo(location.lat, location.lon);
+          })
+        );
+        setWeatherCards(weatherData);
+      } catch (err) {
+        console.error(err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadDefaultWeather();
+  }, []);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -41,7 +53,16 @@ useEffect(() => {
       // Fetch weather using coordinates
       const weatherData = await getWeatherInfo(location.lat, location.lon);
 
-      setWeather(weatherData);
+      setWeatherCards((previous) => {
+        const exists = previous.some(
+          (city) => city.id === weatherData.id
+        );
+
+        if (exists) return previous;
+
+        return [weatherData, ...previous];
+      });
+
       setSearchQuery("");
     } catch (err) {
       console.error(err);
@@ -72,7 +93,15 @@ useEffect(() => {
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
-        weather && <WeatherCard data={weather} />
+        weatherCards && <div className="weather-grid">
+          {weatherCards.map((city) => (
+            <WeatherCard
+              key={city.id}
+              data={city}
+              onDelete={deleteCity}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

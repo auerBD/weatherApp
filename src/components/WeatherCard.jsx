@@ -1,9 +1,10 @@
 import "../WeatherCard.css"
 
 
-function WeatherCard({ data }) {
+function WeatherCard({ data, onDelete }) {
   return (
     <div className="weather-card">
+      <button className="delete-button" onClick={() => onDelete(data.id)}>x</button>
       <h1>{data.name}</h1>
 
       <div className="weather-icon">

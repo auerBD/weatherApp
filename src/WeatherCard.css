@@ -23,7 +23,6 @@
   animation: slideUp 0.5s ease;
 }
 
-@media (hover :hover ) {
   .delete-button {
   position: absolute;
   right: 10px;
@@ -45,6 +44,7 @@
   cursor: pointer;
 }
 
+@media (hover :hover ) {
 .delete-button:hover {
   background: #dd1010;
   transform: scale(110%);

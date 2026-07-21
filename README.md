@@ -2,7 +2,9 @@
 
 A React weather application using OpenWeather API.
 
-<img src="./example_screenshot_weatherApp.png" alt="example screenshotweatherApp" style="display: inline-block; height: 30rem; width: auto; vertical-align: text-bottom; margin: 0 0.25rem;" />
+<img src="./example-pics/Mobile-view.PNG" alt="example screenshotweatherApp" style="display: inline-block; height: 30rem; width: auto; vertical-align: text-bottom; margin: 0 0.25rem;" />
+
+<img src="./example-pics/Desktop-view.png" alt="example screenshotweatherApp" style="display: inline-block; height: 30rem; width: auto; vertical-align: text-bottom; margin: 0 0.25rem;" />
 
 \
 Try it on: [Github Pages](https://auerbd.github.io/weatherApp/)
